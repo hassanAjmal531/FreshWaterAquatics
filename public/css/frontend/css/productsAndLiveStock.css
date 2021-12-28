@@ -1,0 +1,62 @@
+#livestock {
+  width: 100%;
+  font-size: 40.9px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+#title {
+  padding-left: 3%;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.products {
+  text-align: center;
+  width: 100%;
+  background: #eeeeee;
+  padding-bottom: 2vh;
+  padding-top: 2vh;
+  padding-right: 2vh;
+  padding-left: 2ch;
+  border-radius: 8px;
+}
+
+.ProductName {
+  font-size: 18.9px;
+  margin-top: 8px;
+  height: 29px;
+}
+
+.ProductPrice {
+  width: 100%;
+  margin-top: -16px;
+  font-size: 12.9px;
+}
+
+.productImage {
+  width: 100%;
+  height: 38vh;
+  border-radius: 15px;
+}
+
+.ProductAddTocart {
+  background: #107e07;
+}
+
+.productsRow {
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
+.TopTitle {
+  margin-top: 58px;
+  margin-bottom: 20px;
+}
+
+#title-1 {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 12px;
+}
+
