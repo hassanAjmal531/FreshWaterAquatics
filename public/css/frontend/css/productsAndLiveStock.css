@@ -20,6 +20,7 @@
   padding-right: 2vh;
   padding-left: 2ch;
   border-radius: 8px;
+  margin-bottom: 20px;
 }
 
 .ProductName {
@@ -45,7 +46,7 @@
 }
 
 .productsRow {
-  margin-bottom: 10px;
+  margin-bottom: 40px;
   margin-top: 30px;
 }
 

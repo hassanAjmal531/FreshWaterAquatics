@@ -6,6 +6,10 @@ body {
     background-color: rgb(204, 199, 199)
 }
 
+#zero-pad{
+    margin-bottom : 5vh
+}
+
 @media(max-width:991px) {
     #heading {
         padding-left: 50px

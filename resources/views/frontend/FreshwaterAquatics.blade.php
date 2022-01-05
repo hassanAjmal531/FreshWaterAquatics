@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{{asset("css/frontend/css/services.css")}}">
     <link rel="stylesheet" href="{{asset("css/frontend/css/procduct.css")}}">
     <link rel="stylesheet" href="{{asset("css/frontend/css/productsAndLiveStock.css")}}">
-    <link rel="stylesheet" href="{{asset("css/frontend/untitled.css")}}"> 
+    <link rel="stylesheet" href="{{asset("css/frontend/untitled.css")}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
@@ -52,8 +52,18 @@
                         <li class="nav-item"></li>
                         <li class="nav-item"><a class="nav-link" href="{{url("/aboutus")}}" style="color: rgb(248,250,252);font-size: 20px;">About us</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{url("/sevices")}}" style="color: rgb(236,239,241);">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(239,243,247);">Cart</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#"></a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{url("cart")}}" style="color: rgb(239,243,247);">Cart</a></li>
+                        
+                        @if(Route::has("login"))
+                            @auth
+                                <li class="nav-item"><a class="nav-link" href="{{url("logout")}}" style="color: rgb(239,243,247);">logout</a></li>
+                            @else
+                            <li class="nav-item"><a class="nav-link" href="{{url("login")}}" style="color: rgb(239,243,247);">login</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{url("register")}}" style="color: rgb(239,243,247);">register</a></li>
+                            @endif
+
+                        @endif
+                       
                     </ul>
                     <form class="ms-auto search-form" target="_self" style="margin-left: 5px;"action="/search" method='get' >
                         <div class="d-flex align-items-center">
@@ -63,9 +73,9 @@
                             <input class="form-control search-field" type="search" id="search-field" name="search" style="margin-left: 20px;" placeholder="search">
                         </div>
                         <input class="btn btn-light ms-auto action-button" role="button" id="searchBtn"  style="background: rgb(183,183,183);color: rgb(139,131,131);" type="submit" value= "search">
-                        
+
                     </form>
-                   
+
                 </div>
             </div>
         </nav>
@@ -114,23 +124,23 @@
                 </div>
             </div>
             <div class="row productsRow">
-    
-    
+
+
                 @foreach ($products as $product)
-                <div class="col-md-3 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                <div class="col-md-4 col-sm-12 col-md-4 col-lg-4 col-xl-3">
                     <a href="/product/{{$product->id}}" style= "color: black"><div class="products"><img class="productImage" src="assets/img/wallpaperflare.com_wallpaper.jpg">
                         <h1 class="ProductName" style="width: 100%;/*height: 53px;*/">{{$product->name}}</h1>
                         <h1 class="ProductPrice">{{$product->price}}</h1>
-                        <button class="btn btn-primary ProductAddTocart" type="button">Add To Cart</button>
+
                     </div></a>
-                    
+
                 </div>
                 @endforeach
-               
-    
+
+
             </div>
-            
-    
+
+
         </div>
 
 

@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Http\Request;
+use Request;
+
+use session;
+
+
 
 class index extends Controller
 {
@@ -11,6 +15,16 @@ class index extends Controller
         
         $products = DB::select('select * from products');
         return view("frontend.FreshwaterAquatics", compact('products'));
+    }
+
+    public function logout(Request $request1){
+        session()->invalidate();
+        session()->regenerateToken();
+        return redirect("/");
+        
+        
+
+
     }
 
 }

@@ -5,19 +5,48 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="csrf-token" content="example-content"/>
     <title>FreshwaterAquatics</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="{{asset("css/bootstrap.min.css")}}">
     <link rel="stylesheet" href="{{asset("fonts/font-awesome.min.css")}}">
     <link rel="stylesheet" href="{{asset('fonts/ionicons.min.css')}}">
     <link rel="stylesheet" href="{{asset("css/frontend/css/Footer-Dark.css")}}">
     <link rel="stylesheet" href="{{asset("css/frontend/css/Navigation-with-Search.css")}}">
     <link rel="stylesheet" href="{{asset("css/frontend/css/styles.css")}}">
+    <link rel="stylesheet" href="{{asset("css/frontend/css/cart.css")}}">
     <link rel="stylesheet" href="{{asset("css/frontend/css/services.css")}}">
     <link rel="stylesheet" href="{{asset("css/frontend/css/procduct.css")}}">
     <link rel="stylesheet" href="{{asset("css/frontend/css/productsAndLiveStock.css")}}">
     <link rel="stylesheet" href="{{asset("css/frontend/untitled.css")}}"> 
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/checkout/">
+    <link rel="stylesheet" href="{{asset("css/frontend/css/checkout.css")}}">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <meta name="csrf_token" content="TOKEN" id="csrf_token" data-turbolinks-permanent>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    @livewireStyles
 </head>
 
 <body style="width: 100%;">
@@ -32,7 +61,7 @@
                     <li class="nav-item"></li>
                     <li class="nav-item"><a class="nav-link" href="{{asset("/aboutsus")}}" style="color: rgb(248,250,252);font-size: 20px;">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{asset("/services")}}" style="color: rgb(236,239,241);">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(239,243,247);">Cart</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{asset("cart")}}" style="color: rgb(239,243,247);">Cart</a></li>
                     <li class="nav-item"><a class="nav-link" href="#"></a></li>
                 </ul>
                 <form class="ms-auto search-form" target="_self" style="margin-left: 5px;">
