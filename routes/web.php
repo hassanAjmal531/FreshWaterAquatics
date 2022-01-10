@@ -23,7 +23,7 @@ use App\Http\Controllers\checkout;
 */
 
 Route::get('/', function(){
-    return view("frontend.p");
+    return view("frontend.FreshwaterAquatics");
 } );
 
 

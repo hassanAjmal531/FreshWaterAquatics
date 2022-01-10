@@ -24,7 +24,7 @@ class Products extends Controller
     public function openProduct($id){
         
         $product = DB::select("select * from products where id = ?", [$id]);
-        return view("frontend.p", ['product' => $product]);
+        return view("frontend.product", ['product' => $product]);
 
     }
 
@@ -36,7 +36,7 @@ class Products extends Controller
                 return view("frontend.notfound");
             
                 # code...
-            return view("frontend.p",['product'=> $product]);
+            return view("frontend.product",['product'=> $product]);
         
             
 
