@@ -6,16 +6,24 @@
         <div class="col-lg-10 col-12 pt-3">
             <div class="d-flex">
                 <div class="pt-1">
-                    <h4>My T-shirt</h4>
+                    <h4>Cart</h4>
                 </div>
-                <div class="ml-auto p-2"><a href="#" class="text-dark text-decoration-none" id="mobile-font">LOGIN</a></div>
-                <div class="p-2"><a href="#" class="text-dark text-decoration-none a" id="mobile-font">HELP</a></div>
+                
             </div>
+            @if(Cart::count() == 0)
+                <div class="d-flex flex-column pt-4">
+                    <div>
+                        <h3 class="text-uppercase font-weight-normal">Cart is Empty</h3>
+                    </div>
+                    
+                </div>
+            @else
+            
             <div class="d-flex flex-column pt-4">
                 <div>
-                    <h5 class="text-uppercase font-weight-normal">shopping bag</h5>
+                    <h5 class="text-uppercase font-weight-normal">ITEMS</h5>
                 </div>
-                <div class="font-weight-normal">2 items</div>
+                <div class="font-weight-normal">{{Cart::count()}}</div>
             </div>
             <div class="d-flex flex-row px-lg-5 mx-lg-5 mobile" id="heading">
                 <div class="px-lg-5 mr-lg-5" id="produc">PRODUCTS</div>
@@ -40,19 +48,24 @@
                 <div class="pl-md-0 pl-1"><b>{{$c->price}}</b></div>
                 <div class="pl-md-0 pl-2">
                     <div class="pl-md-0 pl-1"><b>{{$c->qty}}</b></div>
-                   
+
+                    <a href="/dec/{{$c->rowId}}">aksjadas</a>
                     <input class="btn btn-light ms-auto action-button" type= "hidden" style="width: 80px; margin-left=5%" value="{{$c->rowId}}">
+                    <a href="/inc/{{$c->rowId}}">aksjadas</a>
                     
                 </div>
                 <div class="pl-md-0 pl-1" ><b>{{$c->price}}</b></div>
-                <div class="close">&times;</div>
+                <div  class="close"><a href="remove/{{$c->rowId}}">&times;</a></div>
             </div>
             @endforeach
         </div>
+        @endif
     </div>
 </div>
+@if(Cart::count() != 0)
 <div class="container bg-light rounded-bottom py-4" id="zero-pad">
     <div class="row d-flex justify-content-center">
+        
         <div class="col-lg-10 col-12">
             <div class="d-flex justify-content-between align-items-center">
                
@@ -60,7 +73,9 @@
                 <div> <a href="checkout" class="btn btn-sm bg-dark text-white px-lg-5 px-3">Proceed to checkout</a> </div>
             </div>
         </div>
+        
     </div>
 </div>
+@endif
 
 @endsection

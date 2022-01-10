@@ -107,10 +107,15 @@
 
         <h4 class="mb-3">Payment</h4>
 
-        <div class="d-block my-3">
-          
         
-        </div>
+
+        @if(session()->has("message")){
+            <div class="d-block my-3">
+                {{session()->get("message")}}
+        
+            </div>
+        }
+        @endif
         
         <hr class="mb-4">
         <button class="btn btn-primary btn-lg btn-block" type="submit">place Order</button>

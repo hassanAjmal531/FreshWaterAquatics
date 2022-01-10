@@ -5,7 +5,7 @@
             <div class="col-md-6 col-sm-12 col-md-6 col-xl-6 col-lg-6" id="imgcol"><img id="product" src="{{asset('images/img/Aquarium-Backgrounds-Download-Free-PixelsTalk_Net.jpg')}}"></div>
             <div class="col-md-6" style="max-height: 280px;">
                 <div class="row">
-                <form action="/addtocart/{{$product[0]->id}}" method="post">
+                <form action="/add/{{$product[0]->id}}" method="POST">
                     @csrf
                     <div class="col col-sm-12 col-md-12 col-lg-12 col-xl-12" id="titleRow">
                         <h1 name="id1" id="id">{{$product[0]->id}}</h1>
@@ -24,17 +24,19 @@
                     </div>
                     <div class="col col-sm-12 col-md-12 col-lg-12 col-xl-12">
                         <div class="input-group" style="margin-top: 11px;">
-                            
-                            
+
+
                             <input class="form-control" type="text" name="quantity1" id="quantity" style="width: 100%;">
                             <input class="btn btn-primary" id="addToCart" type="submit" value="Add to cart" >
 
-                           
-                            
-                           
-                        
                     </div>
                     </div>
+                    @if(session()->has("message")){
+                        <div>
+                            <h1>fuck this damn project</h1>
+                        </div>
+                    }
+                    @endif
                 </form>
                 </div>
             </div>

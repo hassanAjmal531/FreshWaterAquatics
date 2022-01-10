@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="{{asset("css/frontend/untitled.css")}}"> 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/checkout/">
     <link rel="stylesheet" href="{{asset("css/frontend/css/checkout.css")}}">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -51,16 +53,16 @@
 
 <body style="width: 100%;">
     <div class="text-end" style="height: 5vh;width: 100%;color: rgb(247,247,247);background: #2d2d2d;">
-        <h5 class="text-center" style="height: 5px;font-size: 16px;margin-top: 0px;color: rgb(244,146,0);">Free Delivery, No Minimum order</h5>
+        <h5 id ="tl" class="text-center" style="height: 5px;font-size: 16px;margin-top: 0px;color: rgb(244,146,0);">Free Delivery, No Minimum order</h5>
     </div>
     <nav class="navbar navbar-light navbar-expand-lg navigation-clean-search" id="navbar" style="background: rgb(37,37,37);">
         <div class="container"><a class="navbar-brand" href="{{asset("/")}}" style="font-size: 30px;color: rgb(255,253,253);">Fresh Water Aquatics</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse text-end" id="navcol-1">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link navItems" href="#" style="color: rgb(236,239,241);">Live stock/Products</a></li>
+                    <li class="nav-item"><a class="nav-link navItems" href="{{url("/products")}}" style="color: rgb(236,239,241);">Live stock/Products</a></li>
                     <li class="nav-item"></li>
-                    <li class="nav-item"><a class="nav-link" href="{{asset("/aboutsus")}}" style="color: rgb(248,250,252);font-size: 20px;">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{asset("/services")}}" style="color: rgb(236,239,241);">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{asset("/aboutus")}}" style="color: rgb(248,250,252);font-size: 20px;">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{asset("/sevices")}}" style="color: rgb(236,239,241);">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{asset("cart")}}" style="color: rgb(239,243,247);">Cart</a></li>
                     <li class="nav-item"><a class="nav-link" href="#"></a></li>
                 </ul>

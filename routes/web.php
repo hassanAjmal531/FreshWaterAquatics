@@ -48,9 +48,14 @@ Route::get('/products','App\Http\Controllers\Products@index');
 Route::get('/product/{id}','App\Http\Controllers\Products@openProduct');
 //Route::get('/product/{id}','App\Http\Livewire\Shopcart@render');
 Route::get('/search','App\Http\Controllers\Products@searchProduct');
-Route::post('/addtocart/{id}','App\Http\Controllers\ShoppingCart@addtocart');
+//Route::post('/addtocart/{id}','App\Http\Controllers\ShoppingCart@addtocart');
 Route::get('/cart','App\Http\Controllers\ShoppingCart@displayfromCart')->name("cart");
 Route::post('/placeOrder','App\Http\Controllers\checkout@index');
+Route::get('/inc/{rowId}','App\Http\Controllers\ShoppingCart@incCart');
+Route::get('/dec/{rowId}','App\Http\Controllers\ShoppingCart@decCart');
+Route::get('/remove/{rowId}','App\Http\Controllers\ShoppingCart@rCart');
+
+Route::post('/add/{id}','App\Http\Controllers\ShoppingCart@addtocart');
 
 Route::view("/checkout","frontend.checkout")->name("checkout");
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', 'App\Http\Controllers\index@index'
