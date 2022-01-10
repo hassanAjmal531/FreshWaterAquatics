@@ -12,7 +12,7 @@
                 <a href="/product/{{$product->id}}" style= "color: black"><div class="products"><img class="productImage" src="assets/img/wallpaperflare.com_wallpaper.jpg">
                     <h1 class="ProductName" style="width: 100%;/*height: 53px;*/">{{$product->name}}</h1>
                     <h1 class="ProductPrice">{{$product->price}}</h1>
-                    <button class="btn btn-primary ProductAddTocart" type="button">Add To Cart</button>
+                    <button class="btn btn-primary ProductAddTocart" type="button" style="background-color: green; border-color: green">buy now</button>
                 </div></a>         
             </div>
             @endforeach

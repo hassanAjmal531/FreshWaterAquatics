@@ -22,9 +22,11 @@ use App\Http\Controllers\checkout;
 |
 */
 
-// Route::get('/', function(){
-//     return view("frontend.FreshwaterAquatics");
-// } );
+Route::get('/', function(){
+    return view("frontend.p");
+} );
+
+
 Route::get('/aboutus', function(){
     return view("frontend.aboutus");
 });
@@ -37,9 +39,9 @@ Route::get('/contactus', function(){
     return view("frontend.contactus");
 });
 
-Route::get('/product', function(){
-    return view("frontend.product");
-});
+// Route::get('/product', function(){
+//     return view("frontend.product");
+// });
 
 Route::get('/','App\Http\Controllers\index@index');
 //Route::get('/','App\Http\Controllers\cart@index');

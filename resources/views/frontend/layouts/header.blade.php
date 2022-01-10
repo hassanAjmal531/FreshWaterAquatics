@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="{{asset("css/frontend/css/services.css")}}">
     <link rel="stylesheet" href="{{asset("css/frontend/css/procduct.css")}}">
     <link rel="stylesheet" href="{{asset("css/frontend/css/productsAndLiveStock.css")}}">
-    <link rel="stylesheet" href="{{asset("css/frontend/untitled.css")}}"> 
+    <link rel="stylesheet" href="{{asset("css/frontend/untitled.css")}}">
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/checkout/">
     <link rel="stylesheet" href="{{asset("css/frontend/css/checkout.css")}}">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -55,21 +55,42 @@
     <div class="text-end" style="height: 5vh;width: 100%;color: rgb(247,247,247);background: #2d2d2d;">
         <h5 id ="tl" class="text-center" style="height: 5px;font-size: 16px;margin-top: 0px;color: rgb(244,146,0);">Free Delivery, No Minimum order</h5>
     </div>
-    <nav class="navbar navbar-light navbar-expand-lg navigation-clean-search" id="navbar" style="background: rgb(37,37,37);">
-        <div class="container"><a class="navbar-brand" href="{{asset("/")}}" style="font-size: 30px;color: rgb(255,253,253);">Fresh Water Aquatics</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+    <nav class="navbar navbar-light navbar-expand-lg navigation-clean-search text-start" id="navbar" style="background: rgb(37,37,37);">
+        <div class="container">
+            <a id="FWA" class="navbar-brand FWA" href="{{url('/')}}" style="color: rgb(255,253,253);">Fresh Water Aquatics</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden"></span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse text-end" id="navcol-1">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link navItems" href="{{url("/products")}}" style="color: rgb(236,239,241);">Live stock/Products</a></li>
-                    <li class="nav-item"></li>
-                    <li class="nav-item"><a class="nav-link" href="{{asset("/aboutus")}}" style="color: rgb(248,250,252);font-size: 20px;">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{asset("/sevices")}}" style="color: rgb(236,239,241);">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{asset("cart")}}" style="color: rgb(239,243,247);">Cart</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"></a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{url("/aboutus")}}" style="color: rgb(248,250,252);font-size: 15px;">About us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{url("/sevices")}}" style="color: rgb(236,239,241);">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{url("cart")}}" style="color: rgb(239,243,247);">Cart</a></li>
+
+                    @if(Route::has("login"))
+                        @auth
+                            <li class="nav-item"><a class="nav-link" href="{{url("logout")}}" style="color: rgb(239,243,247);">logout</a></li>
+                        @else
+                        <li class="nav-item"><a class="nav-link" href="{{url("login")}}" style="color: rgb(239,243,247);">login</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{url("register")}}" style="color: rgb(239,243,247);">register</a></li>
+                        @endif
+
+                    @endif
+
                 </ul>
-                <form class="ms-auto search-form" target="_self" style="margin-left: 5px;">
-                    <div class="d-flex align-items-center"><label class="form-label d-flex mb-0" for="search-field"><i class="fa fa-search" style="width: 30px;height: 30px;font-size: 30px;"></i></label><input class="form-control search-field" type="search" id="search-field" name="search" style="margin-left: 20px;" value="Search"></div>
-                </form><a class="btn btn-light ms-auto action-button" role="button" id="searchBtn" href="#" style="background: rgb(183,183,183);color: rgb(139,131,131);">Search</a>
+                <form class="ms-auto search-form" target="_self" style="margin-left: 5px;"action="/search" method='get' >
+                    <div class="d-flex align-items-center">
+                        <label class="form-label d-flex mb-0" for="search-field">
+                            <i class="material-icons sicon" style="width: 30px;height: 30px;font-size: 30px; color:orange">search</i>
+                            <input class="form-control search-field" type="search" id="search-field" name="search" style="margin-left: 20px;" placeholder="search"  required>
+
+                        </label>
+                        <input class="btn btn-light ms-auto action-button" role="button" id="searchBtn"  style="background:orange;color: rgb(139,131,131); width:100px" type="submit" value= "search">
+
+                    </div>
+
+
+                </form>
+
             </div>
         </div>
     </nav>
-    <div id="topimg"></div>
+    <div id="topimg" style="background: url:({{asset("images/img/freshwaterAqautaics.jpg")}}) center / cover no-repeat;"></div>
