@@ -2,6 +2,7 @@
 @section('main')
 
 <div class="container bg-white rounded-top mt-5" id="zero-pad">
+    <hr>
     <div class="row d-flex justify-content-center">
         <div class="col-lg-10 col-12 pt-3">
             <div class="d-flex">
@@ -28,23 +29,31 @@
 
 
             <div class="d-flex flex-row justify-content-between align-items-center pt-4 pb-3 mobile">
-                <div class="d-flex flex-row align-items-center">
-                    <div><img src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" width="150" height="150" alt="" id="image"></div>
-                    <div class="d-flex flex-column pl-md-3 pl-1">
-                        <div>
+                <div class="d-flex flex-row align-items-center" style="margin-left:15%;margin-right:5%">
+                
+                    <div class="d-flex flex-column pl-md-3 pl-1" style="width:100%">
+                        <div >
                             <h6>{{$c->name}}</h6>
                         </div>
 
 
                     </div>
                 </div>
-                <div class="pl-md-0 pl-1"><b>{{$c->price}}</b></div>
+                <div class="pl-md-0 pl-1" style="float:left"><b>{{$c->price}}</b></div>
                 <div class="pl-md-0 pl-2">
                     <div class="pl-md-0 pl-1"><b>{{$c->qty}}</b></div>
+                    <div  style="width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;">
+                    <span>
+                        <a class="mr-1" href="/dec/{{$c->rowId}}" style="display: inline-block;"><i class="fas fa-minus"></i></a>
+                    <input class="btn btn-light ms-auto action-button mr-1" type= "hidden" style="width: 80px; margin-left=5%" value="{{$c->rowId}}"style="display: inline-block;">
+                    <a class="mr-1" href="/inc/{{$c->rowId}}" style="display: inline-block;"><i class="material-icons">add</i></a>
+                    </span>
+                    </div>
 
-                    <a href="/dec/{{$c->rowId}}">minus</a>
-                    <input class="btn btn-light ms-auto action-button" type= "hidden" style="width: 80px; margin-left=5%" value="{{$c->rowId}}">
-                    <a href="/inc/{{$c->rowId}}"><i class="material-icons">add</i></a>
+                    
 
                 </div>
                 <div class="pl-md-0 pl-1" ><b>{{$c->price}}</b></div>
@@ -64,7 +73,7 @@
                 @if(Cart::count() != 0)
 
                 <div class="px-md-0 px-1" id="footer-font"> <b class="pl-md-4">SUBTOTAL<span class="pl-md-4">{{Cart::subtotal()}}</span></b> </div>
-                <div> <a href="checkout" class="btn btn-sm bg-dark text-white px-lg-5 px-3">Proceed to checkout</a> </div>
+                <div> <a href="checkout" class="btn btn-sm  text-white px-lg-5 px-3" style="background-color: green">Proceed to checkout</a> </div>
                 @else
 
                     <h3 class="text-uppercase font-weight-normal">Cart is Empty</h3>
@@ -74,6 +83,7 @@
 
     </div>
 </div>
+<hr>
 
 
 @endsection

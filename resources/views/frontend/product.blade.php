@@ -1,47 +1,82 @@
+
 @extends("frontend.layouts.main2")
 @section("main")
-    <div class="container" id="productContainer">
-        <div class="row" style="max-height: 280px;margin-top: 40px;">
-            <div class="col-md-6 col-sm-12 col-md-6 col-xl-6 col-lg-6" id="imgcol"><img id="product" src="{{asset('images/img/Aquarium-Backgrounds-Download-Free-PixelsTalk_Net.jpg')}}"></div>
-            <div class="col-md-6" style="max-height: 280px;">
-                <div class="row">
-                <form action="/add/{{$product[0]->id}}" method="POST">
-                    @csrf
-                    <div class="col col-sm-12 col-md-12 col-lg-12 col-xl-12" id="titleRow">
-                        <h1 name="id1" id="id">{{$product[0]->id}}</h1>
+  <!-- Navbar -->
 
-                    </div>
+  <!--Main layout-->
+  <main class="mt-5 pt-4">
+    <div class="container dark-grey-text mt-5">
 
-                    <div class="col col-sm-12 col-md-12 col-lg-12 col-xl-12" id="titleRow">
-                        <h1 id="title">{{$product[0]->name}}</h1>
-                        <input class="btn btn-primary" id="addToCart" type="hidden" name="id" value="{{$product[0]->id}}">
-                    </div>
-                    <div class="col col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                        <h1 id="price" style="padding-top: 0px;padding-bottom: 0px;padding-left: 1%;">{{$product[0]->price}}</h1>
-                    </div>
-                    <div class="col col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                        <p>{{$product[0]->discription}}</p>
-                    </div>
-                    <div class="col col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                        <div class="input-group" style="margin-top: 11px;">
+      <!--Grid row-->
+      <div class="row wow fadeIn">
 
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
 
-                            <input class="form-control" type="text" name="quantity1" id="quantity" style="width: 100%;">
-                            <input class="btn btn-primary" id="addToCart" type="submit" value="Add to cart" >
+          <img style="width:100%" src="{{asset($product[0]->img)}}" class="img-fluid" alt="">
 
-                    </div>
-                    </div>
-                    @if(session()->has("message")){
-                        <div>
-                            <h1>fuck this damn project</h1>
-                        </div>
-                    }
-                    @endif
-                </form>
-                </div>
-            </div>
         </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-6 mb-4">
+
+          <!--Content-->
+          <div class="p-4">
+
+            <div class="mb-3">
+
+                <span class="badge purple mr-1">id: {{$product[0]->id}}</span>
+
+
+                <span class="badge blue mr-1">New</span>
+
+
+                @if(session()->has("message"))
+                    <span class="badge blue mr-1">added to cart</span>
+               
+                @endif
+
+
+            </div>
+
+            <p class="lead">
+              <span>${{$product[0]->price}}</span>
+            </p>
+
+            <p class="lead font-weight-bold">Description</p>
+
+            <p>{{$product[0]->discription}}</p>
+
+            <form class="d-flex justify-content-left" action="/adds/{{$product[0]->id}}" method="POST">
+                @csrf
+              <!-- Default input -->
+              <input name="quantity1" type="number" value="1" aria-label="Search" class="form-control" style="width: 100px" required>
+              <button class="btn btn-primary btn-md my-0 p"style="background-color:green; border:green" type="submit">Add to cart
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </button>
+
+            </form>
+
+          </div>
+          <!--Content-->
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+      <hr>
+
     </div>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="{{asset("js/cart.js")}}"></script>
-@endsection
+
+
+
+
+
+
+
+
+
+  @endsection

@@ -52,7 +52,7 @@
                 <div class="collapse navbar-collapse text-end" id="navcol-1">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item"><a class="nav-link navItems" href="{{url("/products")}}" style="color: rgb(236,239,241);">Live stock/Products</a></li>
-                        
+
                         <li class="nav-item"><a class="nav-link" href="{{url("/aboutus")}}" style="color: rgb(248,250,252);font-size: 20px;">About us</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{url("/sevices")}}" style="color: rgb(236,239,241);">Services</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{url("cart")}}" style="color: rgb(239,243,247);">Cart</a></li>
@@ -143,7 +143,7 @@
 
                 @foreach ($products as $product)
                 <div class="col-md-4 col-sm-12 col-md-4 col-lg-4 col-xl-3">
-                    <a href="/product/{{$product->id}}" style= "color: black"><div class="products"><img class="productImage" src="assets/img/wallpaperflare.com_wallpaper.jpg">
+                    <a href="/product/{{$product->id}}" style= "color: black"><div class="products"><img class="productImage" src="{{asset($product->img)}}">
                         <h1 class="ProductName " style="margin-top:2%;margin-botton:5%; width: 100%;/*height: 53px;*/">{{$product->name}}</h1>
                         <h1 class="ProductPrice" style="margin-top: 1vh">{{$product->price}}</h1>
 

@@ -9,7 +9,7 @@
         <div class="row productsRow">
             @foreach ($products as $product)
             <div class="col-md-3 col-sm-12 col-md-3 col-lg-3 col-xl-3">
-                <a href="/product/{{$product->id}}" style= "color: black"><div class="products"><img class="productImage" src="assets/img/wallpaperflare.com_wallpaper.jpg">
+                <a href="/product/{{$product->id}}" style= "color: black"><div class="products"><img class="productImage" src="{{asset($product->img)}}">
                     <h1 class="ProductName" style="width: 100%;/*height: 53px;*/">{{$product->name}}</h1>
                     <h1 class="ProductPrice">{{$product->price}}</h1>
                     <button class="btn btn-primary ProductAddTocart" type="button" style="background-color: green; border-color: green">buy now</button>

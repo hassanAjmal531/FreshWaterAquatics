@@ -1,5 +1,6 @@
 @extends('frontend.layouts.main2')
 @section('main')
+    <hr>
     <div class="container">
 
 
@@ -106,22 +107,22 @@
         <hr class="mb-4">
 
         <h4 class="mb-3">Payment</h4>
+        <div class="d-block my-3">
+                
+            <p>after placing the order kindly easy paisa the dues on 0300-xxxxxx and send screen shot on the given number so we can process your order</p>
+    
+        </div>
 
         
 
-        @if(session()->has("message")){
-            <div class="d-block my-3">
-                {{session()->get("message")}}
         
-            </div>
-        }
-        @endif
         
         <hr class="mb-4">
-        <button class="btn btn-primary btn-lg btn-block" type="submit">place Order</button>
+        <button class="btn btn-primary btn-lg btn-block" type="submit" style="background-color: green; border:green">place Order</button>
       </form>
     </div>
   </div>
+  <br>
 
   
 </div>

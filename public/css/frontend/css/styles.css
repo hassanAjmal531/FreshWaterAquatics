@@ -1,3 +1,7 @@
+body {
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
 .navItems:: hover {
     color: orange;
 }
@@ -70,3 +74,4 @@
         font-size: 20px;
     }
 }
+

@@ -57,7 +57,7 @@ Route::get('/inc/{rowId}','App\Http\Controllers\ShoppingCart@incCart');
 Route::get('/dec/{rowId}','App\Http\Controllers\ShoppingCart@decCart');
 Route::get('/remove/{rowId}','App\Http\Controllers\ShoppingCart@rCart');
 
-Route::post('/add/{id}','App\Http\Controllers\ShoppingCart@addtocart');
+Route::post('/adds/{id}','App\Http\Controllers\ShoppingCart@addtocart');
 
 Route::view("/checkout","frontend.checkout")->name("checkout");
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', 'App\Http\Controllers\index@index'
